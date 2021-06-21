@@ -22,7 +22,6 @@ class DeepSilencer():
         seq_conv7  = seq_conv7_(seq_pool1)
         seq_pool2  = MaxPooling2D(pool_size=(1, 2))(seq_conv7)
 
-
         
         x = Flatten()(seq_pool2)
         dense_seq  = Dense(32, activation='relu')(x)

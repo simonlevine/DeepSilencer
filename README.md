@@ -9,7 +9,7 @@ For accurate classification of silencers, we propose a CNN-based model named Dee
 
 ```  
 Requiements:  
-1. Python 3.5 or later version  
+1. Python 3.5 or later version (<= 3.7)
 2. Packages:  
     numpy (>=1.15.1)  
     keras (2.3.1)  

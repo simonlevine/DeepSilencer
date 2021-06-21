@@ -54,7 +54,9 @@ if __name__ == '__main__':
             seq += num2acgt[i]
         test_data_kmer.append(seq_to_kspec(seq,K=K))
     test_data_kmer = np.array(test_data_kmer).reshape(-1,4**K)
+    
     # Model
+
     deepsilencer = DeepSilencer()
     tf.set_random_seed(seed)
     np.random.seed(seed)

@@ -1,11 +1,12 @@
 import numpy as np
 import os
-INDEX1 = '/home/gaozijing/gzj/DeepSilencer/data/bed/Candidate_silencers_and_uncharacterized_CREs_human_hg19_ENCODE_cell_types.txt'
-INDEX2 = '/home/gaozijing/gzj/DeepSilencer/data/bed/Candidate_silencers_and_uncharacterized_CREs_human_hg19_roadmap_cell_types.txt'
-INDEX3 = '/home/gaozijing/gzj/DeepSilencer/data/bed/Candidate_silencers_and_uncharacterized_CREs_mouse_mm10_ENCODE_cell_types.txt'
+INDEX1 = 'data/Candidate_silencers_and_uncharacterized_CREs_human_hg19_ENCODE_cell_types.txt'
+INDEX2 = 'data/Candidate_silencers_and_uncharacterized_CREs_human_hg19_roadmap_cell_types.txt'
+INDEX3 = 'data/Candidate_silencers_and_uncharacterized_CREs_mouse_mm10_ENCODE_cell_types.txt'
 
-GENOME_mm10 = '/home/chenxiaoyang/data/mm10/'
-GENOME_hg19 = '/home/gaozijing/gzj/DeepSilencer/data/Chromosomes/'
+GENOME_mm10 = 'data/genome/mm10'
+GENOME_hg19 = 'data/hg19'
+
 
 name2index = {'h_hg19_ENCODE': INDEX1,'h_hg19_roadmap':INDEX2,'m_mm19_ENCODE': INDEX3}
 encoding_matrix = {'a':0, 'A':0, 'c':1, 'C':1, 'g':2, 'G':2, 't':3, 'T':3, 'n':0, 'N':0}
@@ -21,7 +22,7 @@ def load_genome(name = 'hg19'):
         keys = ['chr' + str(x) for x in chrs]
         sequences = dict()
         for i in range(25):
-            fa = open('%s%s.fa' % (GENOME_hg19, keys[i]), 'r')
+            fa = open('%s/%s.fa' % (GENOME_hg19, keys[i]), 'r')
             sequence = fa.read().splitlines()[1:]
             fa.close()
             sequence = ''.join(sequence)
@@ -31,6 +32,7 @@ def load_genome(name = 'hg19'):
             length += len(sequences[keys[i]])
         print('Length of whole genome sequence:',length)
         return sequences
+
     if name =='mm10':
         print('Loading whole genome sequence...')
         chrs = list(range(1, 20))
@@ -39,7 +41,7 @@ def load_genome(name = 'hg19'):
 
         sequences = dict()
         for i in range(22):
-            fa = open('%s%s.fa' % (GENOME_mm10, keys[i]), 'r')
+            fa = open('%s/%s.fa' % (GENOME_mm10, keys[i]), 'r')
             sequence = fa.read().splitlines()[1:]
             fa.close()
             sequence = ''.join(sequence)
@@ -82,6 +84,7 @@ def cropseq(indexes, l, stride):
 
     print('Data augmentation: from {} indexes to {} samples'.format(len(indexes), len(silencers)))
     return silencers
+    
 # chunks_ = chunks(range(startpos, endpos), l, l - stride)
 def chunks(l, n, o):
     """Yield successive n-sized chunks with o-sized overlap from l."""
