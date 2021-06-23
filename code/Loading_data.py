@@ -1,5 +1,6 @@
 import numpy as np
 import os
+
 INDEX1 = 'data/Candidate_silencers_and_uncharacterized_CREs_human_hg19_ENCODE_cell_types.txt'
 INDEX2 = 'data/Candidate_silencers_and_uncharacterized_CREs_human_hg19_roadmap_cell_types.txt'
 INDEX3 = 'data/Candidate_silencers_and_uncharacterized_CREs_mouse_mm10_ENCODE_cell_types.txt'
