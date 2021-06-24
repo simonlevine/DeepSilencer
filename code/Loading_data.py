@@ -8,7 +8,6 @@ INDEX3 = 'data/Candidate_silencers_and_uncharacterized_CREs_mouse_mm10_ENCODE_ce
 GENOME_mm10 = 'data/genome/mm10'
 GENOME_hg19 = 'data/hg19'
 
-
 name2index = {'h_hg19_ENCODE': INDEX1,'h_hg19_roadmap':INDEX2,'m_mm19_ENCODE': INDEX3}
 encoding_matrix = {'a':0, 'A':0, 'c':1, 'C':1, 'g':2, 'G':2, 't':3, 'T':3, 'n':0, 'N':0}
 acgt2num = {'A': 0,'C': 1,'G': 2,'T': 3}

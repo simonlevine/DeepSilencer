@@ -9,8 +9,8 @@ from sklearn.svm import SVC
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='SVM')
-    parser.add_argument('--train_data', '-d', type=str, help='input train data path',default = '../data/train_mat.hkl')
-    parser.add_argument('--test_data', '-t', type=str, help='input test data path',default= '../data/test_mat.hkl')
+    parser.add_argument('--train_data', '-d', type=str, help='input train data path',default = 'data/train_mat.hkl')
+    parser.add_argument('--test_data', '-t', type=str, help='input test data path',default= 'data/test_mat.hkl')
     parser.add_argument('--outdir', '-o', type=str, default='./output/SVM/', help='Output path')
     parser.add_argument('--seed', type=int, default=1234, help='Random seed for repeat results')
     parser.add_argument('--save_result','-p', type = bool, default = True, help='Save test labels and predicted labels')

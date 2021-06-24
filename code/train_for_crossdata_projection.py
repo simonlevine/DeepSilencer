@@ -10,6 +10,7 @@ from Loading_data import seq_to_kspec,num2acgt
 
 
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser(description='DeepSilencer: Newly developed deep learning model to predict silencers')
     parser.add_argument('--train_data', '-d', type=str, help='input train data path',default = '../data/train_mat.hkl')
     parser.add_argument('--test_data', '-t', type=str, help='input test data path',default= '../data/test_mat.hkl')
@@ -17,7 +18,6 @@ if __name__ == '__main__':
     parser.add_argument('--gpu', '-g', default='0', type=str, help='Select gpu device number when training')
     parser.add_argument('--seed', type=int, default=1234, help='Random seed for repeat results')
     parser.add_argument('--learning_rate','-lr', type=float, default=1e-3,help='Learning rate for training')
-
 
     args = parser.parse_args()
     seed = args.seed
