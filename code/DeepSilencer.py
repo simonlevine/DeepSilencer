@@ -34,6 +34,7 @@ class DeepSilencer():
         merge   = concatenate([dense_seq, dense_kmer], axis = 1)
 
         dense3  = Dense(8, activation='relu')(merge)
+        
         pred_output = Dense(1, activation='sigmoid')(dense3)
 
         self.model = Model(input=[input_seq, input_kmer], output=[pred_output])
